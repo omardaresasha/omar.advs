@@ -39,7 +39,7 @@ h1 span{color:var(--orange)}.english{direction:ltr;text-align:right;color:#c1c9d
 .stamp{position:absolute;top:42px;left:0;z-index:3;color:#d2d8de;font:700 10px 'Manrope',sans-serif;letter-spacing:.17em;direction:ltr;writing-mode:vertical-rl}
 .social-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0 28px}
 .social-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.social-head strong{font:900 20px 'Milan Display','Tonos',sans-serif}.social-head span{color:var(--muted);font-size:12px}
-.socials{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+.socials{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .social{min-height:82px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.018));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;transition:.22s;position:relative;overflow:hidden}
 .social:before{content:"";position:absolute;inset:auto 15% -28px;height:45px;background:var(--accent);filter:blur(24px);opacity:.16}
 .social:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent),transparent 45%);background:rgba(255,255,255,.08)}
@@ -50,7 +50,7 @@ h1 span{color:var(--orange)}.english{direction:ltr;text-align:right;color:#c1c9d
 .contact{border:1px solid rgba(245,130,43,.25);border-radius:28px;padding:34px;background:radial-gradient(ellipse at 100% 0,rgba(245,130,43,.16),transparent 50%),linear-gradient(120deg,#111b25,#0c1118);display:flex;align-items:center;justify-content:space-between;gap:22px}
 .contact h2{font:900 clamp(25px,4vw,38px) 'Milan Display','Tonos',sans-serif;margin:0 0 8px}.contact p{color:var(--muted);margin:0;font-size:14px;line-height:1.9}.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
 footer{padding:25px 0 32px;color:#818a94;font:10px 'Manrope',sans-serif;display:flex;justify-content:space-between;gap:12px;direction:ltr}footer span:last-child{direction:rtl}
-@media(max-width:800px){.shell{width:min(100% - 30px,600px)}header{height:72px}.logo img{width:80px}.hero{grid-template-columns:1fr;gap:8px;padding:28px 0 35px;min-height:0}.copy{order:2;text-align:center;padding:5px 0}.eyebrow{justify-content:center}h1{font-size:clamp(43px,12vw,66px);margin-top:14px}.english{text-align:center;margin:9px 0 18px}.intro{font-size:15px;margin:0 auto 22px;max-width:460px}.actions{justify-content:center}.visual{order:1;min-height:400px}.portrait-frame{height:380px;width:min(310px,78%);border-radius:150px 150px 24px 24px}.float-card{right:0;bottom:22px}.stamp{top:24px;left:5px}.socials{grid-template-columns:repeat(4,1fr)}.social{min-height:72px}.section{padding:55px 0}.services{grid-template-columns:repeat(2,1fr)}.service{padding:19px;min-height:138px}.contact{display:block;text-align:center;padding:27px 20px}.contact-actions{justify-content:center;margin-top:20px}footer{flex-direction:column;align-items:center;text-align:center}}
+@media(max-width:800px){.shell{width:min(100% - 30px,600px)}header{height:72px}.logo img{width:80px}.hero{grid-template-columns:1fr;gap:8px;padding:28px 0 35px;min-height:0}.copy{order:2;text-align:center;padding:5px 0}.eyebrow{justify-content:center}h1{font-size:clamp(43px,12vw,66px);margin-top:14px}.english{text-align:center;margin:9px 0 18px}.intro{font-size:15px;margin:0 auto 22px;max-width:460px}.actions{justify-content:center}.visual{order:1;min-height:400px}.portrait-frame{height:380px;width:min(310px,78%);border-radius:150px 150px 24px 24px}.float-card{right:0;bottom:22px}.stamp{top:24px;left:5px}.socials{grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.social{min-height:72px}.section{padding:55px 0}.services{grid-template-columns:repeat(2,1fr)}.service{padding:19px;min-height:138px}.contact{display:block;text-align:center;padding:27px 20px}.contact-actions{justify-content:center;margin-top:20px}footer{flex-direction:column;align-items:center;text-align:center}}
 @media(max-width:390px){.header-cta{padding:9px 12px;font-size:11px}.portrait-frame{height:345px}.visual{min-height:365px}.services{gap:9px}.service h3{font-size:17px}.btn{padding:0 16px;font-size:13px}}
 
 
@@ -268,6 +268,8 @@ html[data-theme="light"] body:after{
 }
 
 
+
+.social[href*="threads.net"] svg{fill:none!important;stroke:#F5F7FA;stroke-width:1.9}
 /* Interactive social icons: responsive hover, focus and press motion */
 .social{
   transform-style:preserve-3d;
@@ -313,9 +315,99 @@ html[data-theme="light"] body:after{
 .social[href*="wateeno.com"]:hover svg{transform:translateY(-5px) scale(1.2) skewX(-5deg)}
 .social[href*="linkedin.com"]:hover svg{transform:translateY(-5px) scale(1.2)}
 .social[href*="wa.me"]:hover svg{transform:translateY(-5px) scale(1.2) rotate(-8deg)}
+.social[href*="youtube.com"]:hover svg{transform:translateY(-5px) scale(1.2)}
+.social[href*="threads.net"]:hover svg{transform:translateY(-5px) scale(1.2) rotate(-8deg)}
 @media(hover:none){
   .social:active{transform:scale(.96)}
   .social:active svg{transform:scale(1.16) rotate(-6deg)}
+}
+
+
+/* Final social tiles sizing refinement */
+.socials{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:13px;
+}
+.social{
+  min-height:112px;
+  padding:14px 8px;
+  border-radius:21px;
+  gap:10px;
+}
+.social svg{
+  width:36px;
+  height:36px;
+  flex:0 0 36px;
+}
+.social small{
+  font-size:12px;
+  line-height:1.25;
+  font-weight:700;
+}
+@media(max-width:520px){
+  .socials{gap:9px}
+  .social{min-height:100px;padding:11px 5px;gap:8px;border-radius:18px}
+  .social svg{width:32px;height:32px;flex-basis:32px}
+  .social small{font-size:10.5px}
+}
+
+
+/* Exclusive 30% coupon section */
+.coupon-section{padding:34px 0 62px;position:relative}
+.coupon-card{position:relative;max-width:760px;margin:0 auto;padding:34px 30px 28px;text-align:center;overflow:hidden;border:1px solid rgba(194,157,94,.38);border-radius:28px;background:radial-gradient(ellipse at 50% 0%,rgba(191,151,82,.17),transparent 58%),linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));box-shadow:0 22px 55px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.14);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.coupon-icon{width:58px;height:58px;margin:0 auto 13px;border-radius:19px;display:grid;place-items:center;color:#c9a66d;background:rgba(201,166,109,.13);border:1px solid rgba(201,166,109,.35);box-shadow:0 8px 25px rgba(201,166,109,.1)}
+.coupon-icon svg{width:31px;height:31px;fill:none;stroke:currentColor;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
+.coupon-kicker{font-size:10px;letter-spacing:.22em;color:#c9a66d;font-weight:800}
+.coupon-card h2{font-size:clamp(25px,4vw,36px);margin:8px 0;color:var(--text)}
+.coupon-intro{font-size:13px;color:var(--muted);margin:0 auto 18px;max-width:440px;line-height:1.9}
+.coupon-value{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 auto 22px}
+.coupon-value strong{font-size:clamp(42px,8vw,62px);line-height:1;color:#c9a66d;font-weight:900;letter-spacing:-.04em}
+.coupon-value span{font-size:12px;color:var(--muted);text-align:right;max-width:110px;line-height:1.7}
+.coupon-label{display:block;font-size:13px;font-weight:700;margin:0 0 9px;color:var(--text)}
+.coupon-form{display:flex;gap:9px;max-width:470px;margin:0 auto}
+.coupon-form input{flex:1;min-width:0;height:49px;padding:0 15px;border-radius:13px;border:1px solid var(--line);background:rgba(0,0,0,.13);color:var(--text);font:inherit;font-size:13px;outline:none}
+.coupon-form input:focus{border-color:#c9a66d;box-shadow:0 0 0 3px rgba(201,166,109,.12)}
+.coupon-form button,.coupon-code-line button{border:0;cursor:pointer;font:inherit;font-weight:800}
+.coupon-form button{height:49px;padding:0 17px;border-radius:13px;color:#17130d;background:linear-gradient(135deg,#e3c58f,#b58a4c);white-space:nowrap;font-size:12px;box-shadow:0 7px 18px rgba(181,138,76,.2);transition:transform .2s,filter .2s}
+.coupon-form button:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.coupon-result{max-width:470px;margin:19px auto 0;padding:17px;border:1px dashed rgba(201,166,109,.55);border-radius:17px;background:rgba(201,166,109,.07)}
+.coupon-ready{display:block;font-size:12px;color:#c9a66d;font-weight:800;margin-bottom:9px}
+.coupon-code-line{display:flex;justify-content:center;align-items:center;gap:10px}
+.coupon-code-line strong{font-size:clamp(19px,4vw,25px);letter-spacing:.09em;color:var(--text)}
+.coupon-code-line button{padding:7px 12px;border-radius:9px;color:var(--text);background:rgba(255,255,255,.1);font-size:11px}
+.coupon-result p{font-size:12px;color:var(--muted);margin:9px 0 13px}
+.coupon-result>a{display:block;padding:13px 16px;border-radius:12px;background:#25D366;color:#082b18;text-decoration:none;font-size:13px;font-weight:900;transition:transform .2s}
+.coupon-result>a:hover{transform:translateY(-2px)}
+.coupon-result small{display:block;color:var(--muted);font-size:10px;line-height:1.8;margin-top:9px}
+.coupon-footnote{font-size:10px;color:var(--muted);margin-top:17px}
+@media(max-width:520px){.coupon-section{padding:20px 0 45px}.coupon-card{padding:26px 16px 22px;border-radius:22px}.coupon-form{flex-direction:column}.coupon-form button{width:100%}.coupon-value{margin-bottom:19px}}
+
+
+/* Compact, refined coupon layout */
+.coupon-section{padding:22px 0 42px}
+.coupon-card{max-width:590px;padding:24px 24px 20px;border-radius:23px}
+.coupon-icon{width:46px;height:46px;border-radius:15px;margin-bottom:9px}
+.coupon-icon svg{width:25px;height:25px}
+.coupon-kicker{font-size:9px;letter-spacing:.18em}
+.coupon-card h2{font-size:clamp(22px,3vw,29px);margin:5px 0}
+.coupon-intro{font-size:12px;line-height:1.7;margin-bottom:12px}
+.coupon-value{gap:9px;margin-bottom:15px}
+.coupon-value strong{font-size:clamp(36px,6vw,48px)}
+.coupon-value span{font-size:11px}
+.coupon-label{font-size:12px;margin-bottom:7px}
+.coupon-form{max-width:410px;gap:8px}
+.coupon-form input,.coupon-form button{height:43px;border-radius:11px}
+.coupon-form input{font-size:12px}
+.coupon-form button{font-size:11px;padding:0 14px}
+.coupon-result{max-width:410px;margin-top:14px;padding:13px;border-radius:14px}
+.coupon-result>a{padding:11px 14px;font-size:12px}
+.coupon-footnote{font-size:9px;margin-top:12px}
+@media(max-width:520px){
+  .coupon-section{padding:15px 0 32px}
+  .coupon-card{max-width:calc(100% - 16px);padding:21px 15px 17px;border-radius:19px}
+  .coupon-icon{width:42px;height:42px}
+  .coupon-value{margin-bottom:13px}
 }
 
 </style>
@@ -373,7 +465,39 @@ html[data-theme="light"] body:after{
       <svg viewBox="0 0 32 24" aria-hidden="true"><path d="M2 4h5l3.2 11.2L13.5 4h5l3.3 11.2L25 4h5l-5.8 16h-5L16 9.8 12.8 20h-5L2 4Z"/></svg><small>Wateeno</small></a>
     <a class="social" style="--accent:#0A66C2" href="https://www.linkedin.com/in/omar-dares-ashal-6032a4349" target="_blank" rel="noopener" aria-label="LinkedIn">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v12H3.3V9Zm6.1 0H13v1.6h.1A4 4 0 0 1 16.7 8.7c3.9 0 4.6 2.5 4.6 5.7V21h-3.8v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9.4V9Z"/></svg><small>LinkedIn</small></a>
+    <a class="social" style="--accent:#FF0033" href="https://www.youtube.com/@omar.advs1" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg><small>YouTube</small></a>
+    <a class="social" style="--accent:#FFFFFF" href="https://www.threads.net/@omar.advs" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19.7 12.2c0-5.2-3-8.7-7.7-8.7-4.9 0-8 3.5-8 8.7 0 5.3 2.9 8.4 8 8.4 4.4 0 7.2-2.1 7.2-5.5 0-2.8-1.8-4.4-5.1-4.8-3.4-.4-5.4.8-5.4 3.1 0 1.5 1.1 2.5 2.8 2.5 2.5 0 4-1.8 4-4.8 0-2.8-1.1-4.3-3.1-4.3-1.4 0-2.4.7-3.1 2"/><path d="M15.5 11.1c2.5.6 4.1 1.9 4.1 4.1 0 1.5-.7 2.7-1.9 3.6"/><path d="M15.4 12.2c-.2 2.6-1.5 4.2-3.6 4.2"/></svg><small>Threads</small></a>
+    <a class="social" style="--accent:#B8C7D9" href="tel:+967771267478" aria-label="اتصال مباشر">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 2.8 9.1 2c.8-.2 1.6.2 1.9 1l1.2 3.1c.3.7.1 1.5-.5 2l-1.7 1.4a15.2 15.2 0 0 0 4.5 4.5l1.4-1.7c.5-.6 1.3-.8 2-.5l3.1 1.2c.8.3 1.2 1.1 1 1.9l-.8 2.5c-.3.9-1.1 1.5-2.1 1.5C10.3 18.9 5.1 13.7 5.1 7c0-1 .6-1.8 1.5-2.1Z" transform="translate(-1 -0.2)"/></svg><small>اتصال</small></a>
     <a class="social" style="--accent:#25D366" href="https://wa.me/967771267478" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l5.9-1.5A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9 9 0 1 1 12 21Zm5-6.7c-.3-.2-1.7-.9-2-.9-.2-.1-.4-.1-.6.2l-.9 1.1c-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.3-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7 1-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.3-.6-.4Z"/></svg><small>WhatsApp</small></a>
+    <a class="social" style="--accent:#2AABEE" href="https://t.me/omar_advs" target="_blank" rel="noopener" aria-label="Telegram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 3.3 18.5 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5 1.1 12c-1.1-.3-1.1-1 .2-1.5L20.4 3c.9-.3 1.6.2 1.3 1.3Z"/></svg><small>Telegram</small></a>
+  </div>
+</section>
+
+
+<section class="coupon-section" id="exclusive-coupon" aria-label="كوبون الخصم">
+  <div class="coupon-card">
+    <div class="coupon-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 7v13M12 7H8.5a2.5 2.5 0 1 1 2.5-2.5V7Zm0 0h3.5A2.5 2.5 0 1 0 13 4.5V7Z"/></svg>
+    </div>
+    <span class="coupon-kicker">A LITTLE GIFT FOR YOU</span>
+    <h2>لك خصمك الخاص</h2>
+    <p class="coupon-intro">لأنك وصلت من موقعي، تستحق خصمًا خاصًا على خدماتي.</p>
+    <div class="coupon-value"><strong>30%</strong><span>خصم خاص لزوار الموقع</span></div>
+    <label class="coupon-label" for="couponCustomerName">اكتب اسمك للحصول على كوبونك</label>
+    <div class="coupon-form">
+      <input id="couponCustomerName" type="text" maxlength="45" autocomplete="name" placeholder="اسمك الكريم">
+      <button id="createCouponBtn" type="button">احصل على كوبونك <span aria-hidden="true">←</span></button>
+    </div>
+    <div id="couponResult" class="coupon-result" hidden aria-live="polite">
+      <span class="coupon-ready">كوبونك الخاص جاهز</span>
+      <div class="coupon-code-line"><strong id="couponCodeText"></strong><button id="copyCouponBtn" type="button" aria-label="نسخ الكوبون">نسخ</button></div>
+      <p id="couponCustomerText"></p>
+      <a id="sendCouponWhatsApp" href="#" target="_blank" rel="noopener">إرسال الكوبون عبر واتساب</a>
+      <small>اضغط إرسال في واتساب لإيصال بيانات الكوبون إلينا وتأكيد الخصم.</small>
+    </div>
+    <div class="coupon-footnote">كوبون مخصص لك — يُستخدم عند طلب الخدمة والتواصل معنا.</div>
   </div>
 </section>
 
@@ -427,7 +551,7 @@ html[data-theme="light"] body:after{
 <script>
 (function(){
   const targets = document.querySelectorAll(
-    '.copy,.visual,.social-wrap,.section-title,.service,.final-contact,footer'
+    '.copy,.visual,.social-wrap,.coupon-section,.section-title,.service,.final-contact,footer'
   );
   targets.forEach((el,index)=>{
     el.classList.add('js-reveal');
@@ -447,6 +571,58 @@ html[data-theme="light"] body:after{
     });
   },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
   targets.forEach(el=>observer.observe(el));
+})();
+</script>
+
+
+<script>
+(function(){
+  const nameInput=document.getElementById('couponCustomerName');
+  const createBtn=document.getElementById('createCouponBtn');
+  const result=document.getElementById('couponResult');
+  const codeText=document.getElementById('couponCodeText');
+  const customerText=document.getElementById('couponCustomerText');
+  const sendLink=document.getElementById('sendCouponWhatsApp');
+  const copyBtn=document.getElementById('copyCouponBtn');
+  if(!nameInput||!createBtn||!result) return;
+
+  function makeCode(){
+    const alphabet='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let token='';
+    if(window.crypto&&crypto.getRandomValues){
+      const bytes=new Uint8Array(6);crypto.getRandomValues(bytes);
+      for(let i=0;i<bytes.length;i++) token+=alphabet[bytes[i]%alphabet.length];
+    }else{
+      for(let i=0;i<6;i++) token+=alphabet[Math.floor(Math.random()*alphabet.length)];
+    }
+    return 'OMAR30-'+token;
+  }
+  function updateWhatsApp(name,code){
+    const message='مرحباً عمر، وصلت عن طريق موقعك وأرغب باستخدام كوبون الخصم الخاص بي.\nالاسم: '+name+'\nالكوبون: '+code+'\nالخصم: 30%';
+    sendLink.href='https://wa.me/967771267478?text='+encodeURIComponent(message);
+  }
+  createBtn.addEventListener('click',function(){
+    const name=nameInput.value.trim().replace(/\s+/g,' ');
+    if(!name){nameInput.focus();nameInput.setCustomValidity('فضلاً اكتب اسمك أولاً');nameInput.reportValidity();return;}
+    nameInput.setCustomValidity('');
+    let saved=null;
+    try{saved=JSON.parse(localStorage.getItem('omar-coupon-v1')||'null');}catch(e){}
+    if(!saved||saved.name!==name||!saved.code){
+      saved={name:name,code:makeCode(),createdAt:new Date().toISOString()};
+      try{localStorage.setItem('omar-coupon-v1',JSON.stringify(saved));}catch(e){}
+    }
+    codeText.textContent=saved.code;
+    customerText.textContent='هذا الكوبون مخصص لـ '+saved.name+' ويمنحك خصم 30%.';
+    updateWhatsApp(saved.name,saved.code);
+    result.hidden=false;
+    result.scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+  nameInput.addEventListener('input',function(){nameInput.setCustomValidity('');});
+  copyBtn.addEventListener('click',async function(){
+    const code=codeText.textContent;
+    try{await navigator.clipboard.writeText(code);copyBtn.textContent='تم النسخ';}
+    catch(e){copyBtn.textContent='حدد الكود وانسخه';}
+  });
 })();
 </script>
 
